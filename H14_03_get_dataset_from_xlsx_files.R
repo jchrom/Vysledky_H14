@@ -25,7 +25,9 @@ for(i in 320:length(URLs$URL)) {  # celkem 546 - může házet chybu u i = 319
     
 }
 
-write.csv(data.Pil1, file = "./data/dataset_Pil-w319.csv", row.names = FALSE)
+write.csv(data.Pil1, file = "./data/dataset_Pil1-w319.csv", row.names = FALSE)
 
 
 # Ještě je třeba vyřešit pro Pilíř 2 a 3
+
+

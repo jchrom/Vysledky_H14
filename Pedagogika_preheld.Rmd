@@ -1,0 +1,41 @@
+---
+title: "Pedagogika - základní přehled"
+output: html_document
+---
+
+Rychlý přehled v datech za **Pedagogiku**...
+
+```{r, echo=FALSE}
+data_ped <- read.csv("./data/data_ped.csv", stringsAsFactors=FALSE)
+
+```
+
+Roky:
+```{r, echo=FALSE}
+table(data_ped$ROKUPLEFF)
+```
+
+Druh výsledku v hodnocení:
+```{r, echo=FALSE}
+sort(table(data_ped$DRUHODKOD), decreasing = TRUE)
+```
+
+Kód jazyka výsledku:
+```{r, echo=FALSE}
+sort(table(data_ped$VYSJAZKOD), decreasing = TRUE)
+```
+
+Název instituce:
+```{r, echo=FALSE}
+head(sort(table(data_ped$INSNAZPKL), decreasing = TRUE), n = 20)
+```
+
+Název nakladatele:
+```{r, echo=FALSE}
+head(sort(table(data_ped$NAKNAZ), decreasing = TRUE), n = 20)
+```
+
+Název publikačního kanálu:
+```{r, echo=FALSE}
+head(sort(table(data_ped$DOKNAZPRI), decreasing = TRUE), n = 20)
+```
