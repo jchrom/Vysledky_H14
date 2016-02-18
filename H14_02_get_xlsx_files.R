@@ -1,4 +1,4 @@
-# Stažení xlsx souborů
+# Stažení xlsx souborů - chvíli to trvá, tak pozor ;-)
 
 library(downloader)
 

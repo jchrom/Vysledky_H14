@@ -4,27 +4,28 @@ library(XLConnect)
 
 URLs <- read.csv("./data/files_URLs.csv", stringsAsFactors=FALSE)
 
-data.all <- readWorksheetFromFile(paste("./xlsx_data/", URLs$Soubor[1], sep = ""), 
+data.Pil1 <- readWorksheetFromFile(paste("./xlsx_files/", 
+                                         URLs$Soubor[1], sep = ""), 
                                   sheet = "Tab3_Pil1", 
                                   startRow = 5,
                                   header = TRUE)
 
-
-for(i in 320:546) {  # celkem 546
+for(i in 2:length(URLs$URL)) {  # celkem 546 - může házet chybu u i = 319 atd.
     
-    rawData <- readWorksheetFromFile(paste("./xlsx_data/", URLs$Soubor[i], sep = ""),
+    rawData <- readWorksheetFromFile(paste("./xlsx_files/",
+                                           URLs$Soubor[i], sep = ""),
                                      sheet = "Tab3_Pil1", 
                                      startRow = 5,
                                      header = TRUE)
     
-    data.all <- rbind(data.all, rawData)
+    data.Pil1 <- rbind(data.Pil1, rawData)
     
-    print(paste(i, " - Hotovo", sep = ""))
+    print(paste(i, " - Pil1 = OK", sep = ""))
     
-    # zatím háže chybu např. u 400, 319, atd.
     
 }
 
-write.csv(data.all, file = "./hodnoceni_14_data_all_bez_319.csv", row.names = FALSE)
+write.csv(data.Pil1, file = "./data/dataset_Pil1.csv", row.names = FALSE)
 
-# Je třeba provést u všech pilířů !!!
+
+# Ještě je třeba vyřešit pro Pilíř 2 a 3
