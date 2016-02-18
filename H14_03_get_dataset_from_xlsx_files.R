@@ -10,7 +10,7 @@ data.Pil1 <- readWorksheetFromFile(paste("./xlsx_files/",
                                   startRow = 5,
                                   header = TRUE)
 
-for(i in 2:length(URLs$URL)) {  # celkem 546 - může házet chybu u i = 319 atd.
+for(i in 320:length(URLs$URL)) {  # celkem 546 - může házet chybu u i = 319
     
     rawData <- readWorksheetFromFile(paste("./xlsx_files/",
                                            URLs$Soubor[i], sep = ""),
@@ -25,7 +25,7 @@ for(i in 2:length(URLs$URL)) {  # celkem 546 - může házet chybu u i = 319 atd
     
 }
 
-write.csv(data.Pil1, file = "./data/dataset_Pil1.csv", row.names = FALSE)
+write.csv(data.Pil1, file = "./data/dataset_Pil-w319.csv", row.names = FALSE)
 
 
 # Ještě je třeba vyřešit pro Pilíř 2 a 3
