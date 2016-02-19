@@ -4,7 +4,7 @@ pocet.stran <- 14421  # max = 14421
 
 data.url <- data.frame(a=character(), b=character(), stringsAsFactors=FALSE)
 
-for(i in 1:100) {
+for(i in 1:pocet.stran) {
     
     my.html <- read_html(paste("http://www.isvav.cz/h14/fulltext.jsp?page=", 
                                as.character(i), sep = ""))
