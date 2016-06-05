@@ -1,3 +1,5 @@
 *.csv
+*.gexf
+*.pdf
 *.xlsx
 *.xlsx#
